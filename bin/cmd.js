@@ -37,8 +37,8 @@ withConfig(function (config) {
         }
         else {
             var dir = gitDir(process.cwd());
-            if (!path.existsSync(dir + '/.travis.yml')
-            && path.existsSync(dir + '/package.json')) {
+            if (!fs.existsSync(dir + '/.travis.yml')
+            && fs.existsSync(dir + '/package.json')) {
                 var pkg = JSON.parse(fs.readFileSync(dir + '/package.json'));
                 
                 var sv = (pkg.engines || {}).node || '>=0.4';
